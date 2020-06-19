@@ -23,7 +23,7 @@ Simple Python binding to the Linux inotify file system event monitoring API.
 
 %package -n python2-%{lib_name}
 Summary:        %{summary}
-%{?python_provide:%python_provide python2-%{srcname}}
+%{?python_provide:%python_provide python2-%{lib_name}}
 
 %description -n python2-%{lib_name}
 %{description}
@@ -31,7 +31,7 @@ Summary:        %{summary}
 
 %package -n python3-%{lib_name}
 Summary:        %{summary}
-%{?python_provide:%python_provide python3-%{srcname}}
+%{?python_provide:%python_provide python3-%{lib_name}}
 
 %description -n python3-%{lib_name}
 %{description}
