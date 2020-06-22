@@ -1,8 +1,9 @@
 %global lib_name inotifyx
+%global lib_description Simple Python binding to the Linux inotify file system event monitoring API.
 
 Name:           python-inotifyx
 Version:        0.2.2
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Simple Python binding to the Linux inotify API.
 
 License:        MIT
@@ -18,15 +19,14 @@ BuildRequires:  python2-devel
 BuildRequires:  python3-devel
 
 %description
-Simple Python binding to the Linux inotify file system event monitoring API.
-
+%{lib_description}
 
 %package -n python2-%{lib_name}
 Summary:        %{summary}
 %{?python_provide:%python_provide python2-%{lib_name}}
 
 %description -n python2-%{lib_name}
-%{description}
+%{lib_description}
 
 
 %package -n python3-%{lib_name}
@@ -34,7 +34,7 @@ Summary:        %{summary}
 %{?python_provide:%python_provide python3-%{lib_name}}
 
 %description -n python3-%{lib_name}
-%{description}
+%{lib_description}
 
 %prep
 %autosetup -n %{lib_name}-%{version} -p1
@@ -70,6 +70,8 @@ sed -e 's:%{buildroot}::g' -i %{buildroot}%{python3_sitearch}/inotifyx/distinfo.
 
 
 %changelog
+* Mon Jun 22 2020 Manuela Kuhn <manuela.kuhn@desy.de> - 0.2.2-4
+- Fix description
 * Tue Jun 16 2020 Manuela Kuhn <manuela.kuhn@desy.de> - 0.2.2-3
 - Add python3 package
 * Tue Jun 16 2020 Manuela Kuhn <manuela.kuhn@desy.de> - 0.2.2-2
