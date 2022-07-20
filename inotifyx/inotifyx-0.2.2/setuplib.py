@@ -1,7 +1,6 @@
 # Author: Forest Bond
 # This file is in the public domain.
 
-from __future__ import with_statement
 
 import os, sys, shutil
 from tempfile import mkdtemp
@@ -26,6 +25,11 @@ except ImportError:
     _py2exe = None
 else:
     from py2exe.build_exe import byte_compile
+
+if sys.version_info > (3,):
+    unicode = str
+else:
+    bytes = str
 
 
 ###
@@ -236,7 +240,7 @@ class _DistinfoMixin:
             log.info(' %s = %s', k, v)
 
         if not self.dry_run:
-            with open(outfile, 'wb') as f:
+            with open(outfile, 'w') as f:
                 f.write('# coding: utf-8\n')
                 f.write('\n')
                 for modname in imports:
@@ -359,8 +363,8 @@ class install_data(_install_data):
 
     def _gen_data_files(self, base_dir, data_files):
         for arg in data_files:
-            print arg
-            if isinstance(arg, basestring):
+            print(arg)
+            if isinstance(arg, str):
                 yield (base_dir, [arg])
             else:
                 subdir, filenames = arg
