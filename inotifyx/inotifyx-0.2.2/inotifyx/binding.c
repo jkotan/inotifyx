@@ -305,7 +305,7 @@ PyMODINIT_FUNC initbinding(void) {
     if (module == NULL)
         return;
 #endif
-    
+
     PyModule_AddIntConstant(module, "IN_ACCESS", IN_ACCESS);
     PyModule_AddIntConstant(module, "IN_MODIFY", IN_MODIFY);
     PyModule_AddIntConstant(module, "IN_ATTRIB", IN_ATTRIB);

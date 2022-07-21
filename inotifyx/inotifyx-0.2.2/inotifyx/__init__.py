@@ -124,7 +124,7 @@ if __name__ == '__main__':
     import sys
 
     if len(sys.argv) == 1:
-        sys.stderr.write('usage: inotify path [path ...]')
+        sys.stderr.write('usage: inotify path [path ...]\n')
         sys.exit(1)
 
     paths = sys.argv[1:]

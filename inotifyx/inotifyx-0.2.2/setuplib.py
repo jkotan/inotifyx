@@ -2,7 +2,6 @@
 # This file is in the public domain.
 
 
-
 import os, sys, shutil
 from tempfile import mkdtemp
 from modulefinder import Module
@@ -26,6 +25,11 @@ except ImportError:
     _py2exe = None
 else:
     from py2exe.build_exe import byte_compile
+
+if sys.version_info > (3,):
+    unicode = str
+else:
+    bytes = str
 
 
 ###
