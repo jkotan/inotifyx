@@ -220,8 +220,8 @@ class _DistinfoMixin:
 
     def _prepare_distinfo_string(self, value):
         if isinstance(value, str):
-            value = unicode(value)
-        return unicode(repr(value)).encode('utf-8')
+            value = str(value)
+        return str(repr(value)).encode('utf-8')
 
     def _write_distinfo_module(self, outfile, distinfo = (), imports = ()):
         distinfo = list(distinfo)

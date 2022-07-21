@@ -292,7 +292,6 @@ PyMODINIT_FUNC PyInit_binding(void) {
      if (module == NULL)
         return NULL;
 #else
-
 PyMODINIT_FUNC initbinding(void) {
     PyObject* module = Py_InitModule3(
       "inotifyx.binding",
