@@ -31,7 +31,7 @@ def get_version(release_file):
 version = get_version('release')
 
 setup(
-  name = 'inotifyx',
+  name = 'inotifyx_py3',
   distinfo_module = 'inotifyx.distinfo',
   version = version,
   description = 'Simple Linux inotify bindings',
