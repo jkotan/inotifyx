@@ -3,6 +3,7 @@
 
 
 import os, sys, shutil
+import setuptools
 from tempfile import mkdtemp
 from modulefinder import Module
 from distutils.command.build import build

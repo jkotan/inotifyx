@@ -4,7 +4,8 @@
 # This file is in the public domain.
 
 import os, sys, subprocess
-from distutils.core import Extension
+# from distutils.core import Extension
+from setuptools import Extension
 
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'modules'))
